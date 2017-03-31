@@ -12,3 +12,6 @@ class DummyBackend(BaseBackend):
 
     def get_projects(self):
         return []
+
+    def get_balance(self):
+        return {}

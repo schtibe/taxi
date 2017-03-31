@@ -335,6 +335,16 @@ class BaseUi(object):
         ]), bold=True))
         self.msg('\nUse `taxi ci` to commit staging changes to the server')
 
+    def show_balance(self, data):
+        if 'hours' in data:
+            hours = data['hours']
+
+            self.msg("Current Balance: {} of {} ({})".format(
+                hours['done'],
+                hours['target'],
+                hours['balance']
+            ))
+
     def pushed_entry(self, entry):
         if entry.push_error is not None:
             self.msg(click.style("%s - Failed, reason: %s" % (
